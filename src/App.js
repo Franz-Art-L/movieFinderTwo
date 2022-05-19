@@ -1,25 +1,24 @@
 import logo from './logo.svg';
+import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
+import Home from './Home';
 import './App.css';
 
+const NotFound = () => {
+  return <h2>404 page not found.</h2>
+}
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return(
+      <Router>
+        <nav className='navbar navbar-expand-lg navbar-dark bg-dark'>
+          <Link to="/" className='navbar-brand'>...Ishoboy Movie Finder📹</Link>
+        </nav>
+        <Switch>
+          <Route path="/" exact component={Home}/>
+          <Route component={NotFound}/>
+        </Switch>
+      </Router>
+    )  
 }
 
 export default App;
