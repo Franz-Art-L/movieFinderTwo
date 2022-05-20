@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { json, checkResponse } from './utils';
+import './App.css';
 
 const Movie = props => {
     const {Title, Year, imdbID, Type, Poster} = props.movie;
@@ -9,7 +10,7 @@ const Movie = props => {
         <div className="row">
             <div className="d-flex justify-content-center col-12 col-sm-6">
                 <Link to={`/movie/${imdbID}`}>
-                    <img src={Poster} className="img-fluid"/>
+                    <img src={Poster} className="img-fluid" alt='poster'/>
                 </Link>
             </div>
 
@@ -19,7 +20,7 @@ const Movie = props => {
                     <p>Type: {Type} | Year: {Year}</p>
                 </Link>
             </div>
-           <hr />
+            <hr />
         </div>
     )
 }
@@ -75,10 +76,9 @@ class MovieFinder extends React.Component {
                     <div className="col-12">
                         <div className="mx-auto" style={{width: '200px'}}>
                             
-                            <form className="form-inline my-4" onSubmit={this.submitHandle}>
+                            <form className="my-4" onSubmit={this.submitHandle}>
                                         
                                     <input className="form-control mr-sm-2" placeholder="Movie Title" type="text" value={searchTerm} onChange={this.handleChange} />
-
                                     <button type="submit" className="btn btn-primary">Search Movie</button>
                             </form>
                         
