@@ -12,7 +12,7 @@ function App() {
       <Router>
         
         <nav className='navbar navbar-expand-lg navbar-dark bg-dark'>
-          <Link to="/" className='navbar-brand'>...Ishoboy Movie Finder...📹</Link>
+          <Link to="/" className='navbar-brand'>Movie Finder 2</Link>
         </nav>
 
         <Switch>
